@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">Scheduling App</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#services">Home</a></li>
+            <li><a href="#schedule">Login</a></li>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <section class="hero-section">
+        <h1>Scheduling Algorithms</h1>
+        <p>Choose an algorithm and input parameters to schedule appointments.</p>
+        <a href="#schedule" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We specialize in efficient scheduling algorithms to optimize resource utilization.</p>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>First Come First Serve (FCFS)</h3>
+            <p>Schedule tasks based on arrival time.</p>
+        </div>
+        <div class="service">
+            <h3>Shortest Job First (Preemptive)</h3>
+            <p>Schedule tasks with the shortest processing time next, preempting if necessary.</p>
+        </div>
+        <div class="service">
+            <h3>Shortest Job First (Non-Preemptive)</h3>
+            <p>Schedule tasks with the shortest processing time next without preempting.</p>
+        </div>
+        <div class="service">
+            <h3>Priority Scheduling (Preemptive)</h3>
+            <p>Schedule tasks based on priority, preempting if necessary.</p>
+        </div>
+        <div class="service">
+            <h3>Priority Scheduling (Non-Preemptive)</h3>
+            <p>Schedule tasks based on priority without preempting.</p>
+        </div>
+        <div class="service">
+            <h3>Round Robin</h3>
+            <p>Schedule tasks in a round-robin fashion with a defined quantum.</p>
+        </div>
+    </section>
+
+    <section id="schedule" class="input-form-section">
+        <h2>Schedule Appointment</h2>
+        <form id="schedule-form">
+            <label for="arrival-times">Arrival Times (comma-separated):</label>
+            <input type="text" id="arrival-times" name="arrival-times" required>
+            
+            <label for="service-times">Service Times (comma-separated):</label>
+            <input type="text" id="service-times" name="service-times" required>
+            
+            <label for="algorithm">Select Algorithm:</label>
+            <select id="algorithm" name="algorithm" required>
+                <option value="">Choose...</option>
+                <option value="First come first served (FCFS)">First Come First Serve (FCFS)</option>
+                <option value="Shortest Job First (Preemptive)">Shortest Job First (Preemptive)</option>
+                <option value="Shortest Job First (Non-Preemptive)">Shortest Job First (Non-Preemptive)</option>
+                <option value="Priority scheduling (Preemptive)">Priority Scheduling (Preemptive)</option>
+                <option value="Priority scheduling (Non-Preemptive)">Priority Scheduling (Non-Preemptive)</option>
+                <option value="Round Robin">Round Robin</option>
+            </select>
+            
+            <label for="priority">Priority (comma-separated, optional):</label>
+            <input type="text" id="priority" name="priority">
+            
+            <label for="quantum">Quantum (for Round Robin, optional):</label>
+            <input type="number" id="quantum" name="quantum">
+
+            <label for="context-switch">Context Switch Time (optional):</label>
+            <input type="number" id="context-switch" name="context-switch" min="0" step="1" value="0">
+
+            <button type="submit">Schedule</button>
+        </form>
+
+        <button id="clear-output">Clear Output</button>
+
+        <div id="gantt-chart" class="output-board hidden"></div>
+
+        <h2>Scheduling Table</h2>
+        <table id="scheduling-table" class="hidden">
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th>Arrival Time</th>
+                    <th>Service Time</th>
+                    <th>Finish Time</th>
+                    <th>Turnaround Time</th>
+                    <th>Normalized Turnaround Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Scheduling App. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

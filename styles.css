@@ -1,0 +1,640 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fdecda;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #073B3A;
+    padding: 10px 40px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar:hover {
+    background-color: #062f2b;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo {
+    color: #f3ece4;
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 300px;
+    text-decoration: none;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Center the navigation links */
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0;
+}
+
+.navbar .nav-links a {
+    color: #fdecda;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s, letter-spacing 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #a0d0c0;
+    transform: translateY(-3px);
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #fdecda;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #073B3A;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .nav-links.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .navbar .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* App Heading */
+.app-heading {
+    position: fixed;
+    top: 15px; /* Adjust as needed */
+    right: 15px; /* Adjust as needed */
+    background-color: #073B3A; /* Background color to make it stand out */
+    color: #fdecda; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it stays above other content */
+}
+
+.app-heading h1 {
+    margin: 0;
+    font-size: 24px; /* Adjust font size as needed */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 150px 20px;
+    background: linear-gradient(rgba(7, 59, 58, 0.6), rgba(7, 59, 58, 0.6)), url('hero.jpg') no-repeat center/cover;
+    color: #fdecda;
+    animation: fadeIn 1.5s ease-in-out;
+    perspective: 1000px;
+}
+
+.hero-section h1 {
+    font-size: 56px;
+    margin: 0;
+    animation: slideInFromLeft 1s ease-out;
+    transform: rotateY(-30deg);
+    transition: transform 0.5s, text-shadow 0.3s;
+}
+
+.hero-section:hover h1 {
+    transform: rotateY(0);
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin: 20px 0;
+    animation: slideInFromRight 1s ease-out;
+    transform: rotateY(30deg);
+    transition: transform 0.5s, text-shadow 0.3s;
+}
+
+.hero-section:hover p {
+    transform: rotateY(0);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .cta-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #fdecda;
+    color: #073B3A;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.service {
+    background-color: #fdecda;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: perspective(1000px) rotateY(0);
+}
+
+.service:hover {
+    transform: perspective(1000px) rotateY(15deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Input Form Section */
+.input-form-section {
+    padding: 60px 20px;
+    background-color: #fdecda;
+    text-align: center;
+}
+
+.input-form-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.input-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #073B3A;
+    outline: none;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #073B3A;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #062f2b;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Output Board */
+.output-board {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.output-board:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Gantt Chart */
+#gantt-chart {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#gantt-chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.chart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    background-color: #fdecda;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chart:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    border-right: 1px solid #bdc3c7;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.bar:nth-child(odd) {
+    background-color: #073B3A;
+}
+
+.bar:nth-child(even) {
+    background-color: #e74c3c;
+}
+
+.bar:hover {
+    transform: scale(1.05);
+}
+
+/* Scheduling Table */
+#scheduling-table {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#scheduling-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#scheduling-table th,
+#scheduling-table td {
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+}
+
+#scheduling-table th {
+    background-color: #073B3A;
+    color: #fdecda;
+    font-size: 18px;
+}
+
+#scheduling-table td {
+    background-color: #fdecda;
+    color: #073B3A;
+    font-size: 16px;
+}
+
+#scheduling-table tr:nth-child(even) td {
+    background-color: #e8f6f6;
+}
+
+#scheduling-table tr:hover {
+    background-color: #d0f0f0;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #073B3A;
+    color: #fdecda;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #073B3A;
+    color: #fdecda;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #062f2b;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* Add your existing CSS here */
+
+#scheduling-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+#scheduling-table.show {
+    display: table; /* Show when necessary */
+}
+
+#scheduling-table th,
+#scheduling-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#scheduling-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#scheduling-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#scheduling-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Gantt chart styles */
+.gantt-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gantt-bar {
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* General Styles */
+body {
+    perspective: 1500px; /* Add perspective to enable 3D effects */
+}
+
+/* Navbar */
+.navbar {
+    transform-style: preserve-3d;
+}
+
+
+
+/* Navbar Links */
+.navbar .nav-links a {
+    transform: translateZ(0);
+}
+
+.navbar .nav-links a:hover {
+    transform: translateY(-5px) rotateY(5deg);
+}
+
+/* App Heading */
+.app-heading {
+    transform: perspective(1000px) rotateX(10deg);
+}
+
+/* Hero Section */
+.hero-section {
+    transform: perspective(1000px) rotateX(-10deg);
+}
+
+.hero-section:hover h1,
+.hero-section:hover p {
+    transform: rotateY(0) scale(1.05);
+}
+
+/* Service Cards */
+.service {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+.service:hover {
+    transform: perspective(1000px) rotateY(15deg) scale(1.02);
+}
+
+/* Input Form Section */
+.input-form-section form input,
+.input-form-section form select,
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    transform: translateZ(0);
+}
+
+/* Button Hover Effect */
+button:hover {
+    transform: translateY(-5px) scale(1.05) rotateX(3deg);
+}
+
+/* Output Board */
+.output-board {
+    transform-style: preserve-3d;
+}
+
+.output-board:hover {
+    transform: translateY(-5px) rotateY(5deg);
+}
+
+/* Gantt Chart */
+#gantt-chart {
+    transform: perspective(1000px) rotateX(-5deg);
+}
+
+#gantt-chart:hover {
+    transform: translateY(-5px) rotateX(5deg);
+}
+
+.chart {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+.chart:hover {
+    transform: perspective(1000px) rotateX(5deg);
+}
+
+/* Scheduling Table */
+#scheduling-table {
+    transform-style: preserve-3d;
+}
+
+#scheduling-table.show {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+#scheduling-table th,
+#scheduling-table td {
+    transition: transform 0.3s;
+}
+
+#scheduling-table th:hover,
+#scheduling-table td:hover {
+    transform: translateZ(10px);
+}
+
+/* Footer */
+.footer {
+    transform-style: preserve-3d;
+}
+
+.footer:hover {
+    transform: rotateX(5deg);
+}
